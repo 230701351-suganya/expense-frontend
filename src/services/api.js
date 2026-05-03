@@ -1,8 +1,12 @@
 import axios from "axios"
 
 const api = axios.create({
-  baseURL: "https://unison-carnivore-penpal.ngrok-free.dev/",
+  baseURL: "https://unison-carnivore-penpal.ngrok-free.dev",
+  headers: {
+    "ngrok-skip-browser-warning": "true"
+  }
 })
+
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token")
